@@ -77,18 +77,20 @@
       },
       "prune-lockfile": {
         "executor": "@nx/js:prune-lockfile",
+        "dependsOn": ["build"],
         "options": {
           "buildTarget": "build"
         }
       },
       "copy-workspace-modules": {
         "executor": "@nx/js:copy-workspace-modules",
+        "dependsOn": ["build"],
         "options": {
           "buildTarget": "build"
         }
       },
       "dist": {
-        "dependsOn": ["build", "prune-lockfile", "copy-workspace-modules"]
+        "dependsOn": ["prune-lockfile", "copy-workspace-modules"]
       }
     }
   }

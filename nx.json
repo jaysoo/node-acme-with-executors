@@ -25,13 +25,15 @@
         }
       },
       "exclude": [
-        "packages/util/*"
+        "packages/util/*",
+        "packages/hello/*"
       ]
     },
     {
       "plugin": "@nx/js/typescript",
       "include": [
-        "packages/util/*"
+        "packages/util/*",
+        "packages/hello/*"
       ],
       "options": {
         "typecheck": {
