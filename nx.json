@@ -23,6 +23,20 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
+      },
+      "exclude": [
+        "packages/util/*"
+      ]
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": [
+        "packages/util/*"
+      ],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
       }
     }
   ],

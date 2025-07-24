@@ -86,6 +86,9 @@
         "options": {
           "buildTarget": "build"
         }
+      },
+      "dist": {
+        "dependsOn": ["build", "prune-lockfile", "copy-workspace-modules"]
       }
     }
   }
