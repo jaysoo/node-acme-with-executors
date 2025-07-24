@@ -2,6 +2,13 @@
   "name": "@node-acme/api",
   "version": "0.0.1",
   "private": true,
+  "dependencies": {
+    "@fastify/autoload": "~6.0.3",
+    "@fastify/sensible": "~6.0.2",
+    "axios": "^1.6.0",
+    "fastify": "~5.2.1",
+    "fastify-plugin": "~5.0.1"
+  },
   "nx": {
     "targets": {
       "build": {
@@ -67,6 +74,18 @@
           "build"
         ],
         "command": "docker build -f apps/api/Dockerfile . -t node-acme-api"
+      },
+      "prune-lockfile": {
+        "executor": "@nx/js:prune-lockfile",
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "copy-workspace-modules": {
+        "executor": "@nx/js:copy-workspace-modules",
+        "options": {
+          "buildTarget": "build"
+        }
       }
     }
   }
